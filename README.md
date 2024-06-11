@@ -15,6 +15,9 @@ You can install this package via composer:
 composer require juststeveking/laravel-redoc
 ```
 
+## Enabling Alfred
+
+To enable Alfred on your docs, visit: https://www.treblle.com/product/alfred or https://docs.treblle.com/treblle/ai-assistant
 
 ## Configuration
 
@@ -31,6 +34,12 @@ return [
     'path' => [
         'name' => env('REDOC_PATH_NAME', 'docs'),
         'url' => env('REDOC_PATH_URL', 'api/docs'),
+    ],
+    
+    'alfred' => [
+        'enabled' => env('REDOC_ALFRED', true),
+        'project_id' => env('ALFRED_PROJECT_ID', null),
+        'api_key' => env('ALFRED_API_KEY', null),
     ],
 
     'openapi' => [

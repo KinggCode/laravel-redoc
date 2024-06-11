@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
-    <title>{{ config('redoc.config.title') }}</title>
-    <!-- needed for adaptive design -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
 
-    <!--
-    ReDoc doesn't change outer page styles
-    -->
+    <link rel="preconnect" href="https://assets.treblle.com" />
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+    <title>{{ config('redoc.config.title') }}</title>
+
+    <!-- ReDoc doesn't change outer page styles -->
     <style>
       body {
         margin: 0;
@@ -27,7 +28,16 @@
         native-scrollbars="{{ config('redoc.config.scrollbars') }}"
         untrusted-spec="{{ config('redoc.config.trust') }}"
     ></redoc>
-    
+
+    @if (config('redoc.alfred.enabled'))
+      <div
+        class="getalfred-io"
+        data-api="{{ config('redoc.alfred.project_id') }}"
+        data-auth="{{ config('redoc.alfred.api_key') }}"
+      ></div>
+      <script src="https://assets.treblle.com/alfred-embed-v3.min.js"></script>
+    @endif
+
     <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
   </body>
 </html>

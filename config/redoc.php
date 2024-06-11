@@ -19,6 +19,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Alfred Support
+    |--------------------------------------------------------------------------
+    |
+    | Enable Alfred Support
+    | @see https://docs.treblle.com/treblle/ai-assistant/
+    |
+    */
+    'alfred' => [
+        'enabled' => env('REDOC_ALFRED', true),
+        'project_id' => env('ALFRED_PROJECT_ID', null),
+        'api_key' => env('ALFRED_API_KEY', null),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | OpenAPI Specification
     |--------------------------------------------------------------------------
     |
@@ -82,7 +97,7 @@ return [
         |--------------------------------------------------------------------------
         |
         | If true clicking second time on expanded menu item will collapse it.
-        | 
+        |
         | Default: true
         |
         | Supported: "true", "false"
