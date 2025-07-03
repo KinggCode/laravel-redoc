@@ -1,5 +1,5 @@
 {
-    "name": "juststeveking/laravel-redoc",
+    "name": "kinggcode/laravel-redoc",
     "description": "A simple API documentation package for Laravel using OpenAPI and Redoc",
     "keywords": [
         "laravel",
